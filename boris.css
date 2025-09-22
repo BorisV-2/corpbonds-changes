@@ -1,0 +1,27 @@
+/* Здесь располагаются CSS-стили */
+
+.screener__table-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media only screen and (max-width: 576px) {
+  .common-pager {
+    flex-direction: column;
+    margin-left: 12px;
+    gap: 0;
+    align-items: flex-end;
+  }
+  .rows-count-text {
+    justify-content: flex-end;
+  }
+}
+
+.filters-in-popup > * {
+  width: 100%;
+}
+
+.common-pager {
+  position: sticky;
+  left: 0;
+}
