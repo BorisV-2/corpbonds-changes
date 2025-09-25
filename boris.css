@@ -25,3 +25,27 @@
   position: sticky;
   left: 0;
 }
+
+/* Где important - нужно заменить исходные стили */
+.screener__filters-row {
+    justify-content: flex-start !important;
+	gap: 16px 16px !important;
+}
+
+@media only screen and (max-width: 768px) {
+	.custom-select:not(.filter-rating) {
+		flex: 1;
+	}
+	.filter-rating {
+		width: 100%;
+	}
+	.filter-coupon-type {
+		width: auto;
+	}
+	.filter-liquidity {
+		width: auto;
+	}
+	.filter-currency {
+		width: auto;
+	}
+}

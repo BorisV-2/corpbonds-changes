@@ -43,7 +43,7 @@ function newInitFiltersExpand() {
 document.addEventListener("DOMContentLoaded", () => {
 	const popupWarningElem = document.getElementById("popup_warning");
 	const popupFilters = document.createElement("div");
-	popupFilters.class = "popup-content-prepared"
+	popupFilters.classList.add("popup-content-prepared")
 	popupFilters.id = "popup_filters"
 	popupFilters.innerHTML = `<div b-w7kossr6ap="" class="popup-title">Фильтры</div>
       <p b-w7kossr6ap="" class="filters"></p>`
