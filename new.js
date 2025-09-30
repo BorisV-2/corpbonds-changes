@@ -42,7 +42,7 @@ function newInitFiltersExpand() {
 // переписать функцию initScreenerSettings
 function newInitScreenerSettings() {
 	if (window.innerWidth <= 768){
-		// заменить на html-вёрстку
+		// заменить на html-вёрстку. Создаётся элемент .screener__mobile-popup, а в ней .screener__mobile-popup-content
 		const popupElement = document.createElement("div");
 		const popupContentElement = document.createElement("div");
 		const closeButton = document.createElement("div");
@@ -50,9 +50,10 @@ function newInitScreenerSettings() {
 		popupContentElement.classList.add("screener__mobile-popup-content");
 		closeButton.classList.add("screener__popup-close-button");
 		closeButton.innerText = "X"; // вставьте какую-нибудь картинку сами
-		popupElement.appendChild(closeButton);
+		popupContentElement.appendChild(closeButton);
 		popupElement.appendChild(popupContentElement);
-		$(".screener__btns").append($(".screener__mobile-popup"));
+		$(".screener__btns").append(popupElement);
+		$(".screener__mobile-popup-content").append($(".screener__toggle-columns"));
 	}
     $('#screener_settings_button').click(function(){
         $('.screener__toggle-columns').toggleClass('active');
@@ -66,6 +67,7 @@ function newInitScreenerSettings() {
         }
     });
 	$('.screener__popup-close-button').click(function(){
+		console.log("closed");
 		$('.screener__mobile-popup').removeClass('active');
 	})
 }

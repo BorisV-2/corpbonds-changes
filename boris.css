@@ -108,6 +108,10 @@
     position: fixed;
 }
 
+.screener__mobile-popup.active {
+	display: flex;
+}
+
 .screener__popup-close-button {
     width: 40px;
     height: 40px;
@@ -126,23 +130,23 @@
 	flex-direction: column;
 	justify-content: center;
     align-items: center;
-	max-width: 440px;
+	max-width: 480px;
     width: 100%;
     height: 100%;
-	margin-left: 16px;
-    margin-right: 16px;
+	margin: 0 auto;
+    padding: 16px;
 }
 
 .screener__mobile-popup .screener__block {
-	top: auto;
-	right: auto;
-	width: auto;
+	width: 100%;
+	margin: 0;
 }
 
 @media only screen and (max-width: 768px) {
 	.screener__toggle-columns {
 		position: static;
 		max-height: 640px;
+		max-width: none;
 	}
 
 	.screener__toggle-btns {
