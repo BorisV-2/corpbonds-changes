@@ -39,6 +39,37 @@ function newInitFiltersExpand() {
   });
 }
 
+// переписать функцию initScreenerSettings
+function newInitScreenerSettings() {
+	if (window.innerWidth <= 768){
+		// заменить на html-вёрстку
+		const popupElement = document.createElement("div");
+		const popupContentElement = document.createElement("div");
+		const closeButton = document.createElement("div");
+		popupElement.classList.add("screener__mobile-popup");
+		popupContentElement.classList.add("screener__mobile-popup-content");
+		closeButton.classList.add("screener__popup-close-button");
+		closeButton.innerText = "X"; // вставьте какую-нибудь картинку сами
+		popupElement.appendChild(closeButton);
+		popupElement.appendChild(popupContentElement);
+		$(".screener__btns").append($(".screener__mobile-popup"));
+	}
+    $('#screener_settings_button').click(function(){
+        $('.screener__toggle-columns').toggleClass('active');
+		if (window.innerWidth <= 768){
+			$('.screener__mobile-popup').toggleClass('active');
+		}
+    });
+    $(document).on('click', function (e) {
+        if ($(e.target).closest('#screener_settings_button').length == 0 && $(e.target).closest('.screener__toggle-columns').length == 0) {
+            $('.screener__toggle-columns').removeClass('active');
+        }
+    });
+	$('.screener__popup-close-button').click(function(){
+		$('.screener__mobile-popup').removeClass('active');
+	})
+}
+
 // добавить после #popup_warning, скрипт убрать
 document.addEventListener("DOMContentLoaded", () => {
 	const popupWarningElem = document.getElementById("popup_warning");
@@ -49,4 +80,5 @@ document.addEventListener("DOMContentLoaded", () => {
       <p b-w7kossr6ap="" class="filters"></p>`
 	document.body.insertBefore(popupFilters, popupWarningElem);
 	newInitFiltersExpand();
+	newInitScreenerSettings();
 });
