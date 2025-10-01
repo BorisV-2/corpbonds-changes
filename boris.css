@@ -105,13 +105,13 @@
 .table thead th {
   font-size: 16px;
   white-space: nowrap;
-  padding-right: 66px;
+  padding-right: 58px;
 }
 
 @media only screen and (max-width: 992px) {
   .table td,
   .table th {
-    padding: 10px 0 10px 10px !important;
+    padding: 10px 58px 10px 10px !important;
   }
   .table td {
     text-align: left !important;
@@ -202,5 +202,24 @@
 @media only screen and (max-width: 992px) {
   .table__icons-header {
     gap: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .footer .nav-menu {
+    flex-direction: row !important;
+    font-size: 14px;
+  }
+  .nav-menu__tg > p {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .footer .nav-menu {
+    flex-direction: column !important;
+  }
+  .nav-menu__tg > p {
+    display: block;
   }
 }
