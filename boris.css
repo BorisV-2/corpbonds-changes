@@ -203,6 +203,14 @@
   flex-direction: row !important;
 }
 
+.link-arrow {
+  width: fit-content;
+}
+
+.screener__btns {
+  padding-right: 16px;
+}
+
 @media only screen and (max-width: 992px) {
   .table__icons-header {
     gap: 0 !important;
