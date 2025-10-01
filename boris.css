@@ -26,6 +26,27 @@
   left: 0;
 }
 
+@media only screen and (max-width: 1280px) {
+  .screener__filters {
+    display: flex !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .screener__filters {
+    display: block !important;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 992px) {
+  .screener__filter-btns {
+    flex-direction: row !important;
+  }
+  .screener__filter-btns > button {
+    flex: 1;
+  }
+}
+
 /* Где important - нужно заменить исходные стили */
 .screener__filters-row {
   justify-content: flex-start !important;
@@ -34,25 +55,18 @@
 
 @media only screen and (max-width: 768px) {
   .custom-select:not(.filter-rating) {
-    flex: 1;
+    width: calc(50% - 8px);
   }
   .filter-rating {
     width: 100%;
   }
-  .filter-coupon-type {
-    width: auto;
-  }
-  .filter-liquidity {
-    width: auto;
-  }
-  .filter-currency {
-    width: auto;
-  }
 }
 
 @media only screen and (max-width: 576px) {
+  .screener__filters-row {
+    flex-direction: column;
+  }
   .custom-select:not(.filter-rating) {
-    flex: 0;
     width: 100%;
   }
 }
@@ -91,7 +105,17 @@
 .table thead th {
   font-size: 16px;
   white-space: nowrap;
-  min-width: 150px;
+  padding-right: 66px;
+}
+
+@media only screen and (max-width: 992px) {
+  .table td,
+  .table th {
+    padding: 10px 0 10px 10px !important;
+  }
+  .table td {
+    text-align: left !important;
+  }
 }
 
 .tooltip-content {
@@ -173,4 +197,10 @@
 
 .table__icons-header {
   flex-direction: row !important;
+}
+
+@media only screen and (max-width: 992px) {
+  .table__icons-header {
+    gap: 0 !important;
+  }
 }
