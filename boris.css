@@ -116,6 +116,10 @@
   .table td {
     text-align: left !important;
   }
+  td.title,
+  th.title {
+    padding-right: 20px !important;
+  }
 }
 
 .tooltip-content {
