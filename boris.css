@@ -238,6 +238,6 @@
 
 @media screen and (max-width: 576px) {
   .table tbody td.title {
-    min-width: none;
+    min-width: 0;
   }
 }
